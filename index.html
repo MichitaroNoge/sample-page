@@ -1,189 +1,154 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <title>メールでの予約</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 2em;
-        color: #333;
-        line-height: 1.4;
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="メールでのご予約が簡単にできます。本予約、仮予約、予約変更、キャンセル、空き状況確認のメールテンプレートをご利用ください。">
+    <meta name="keywords" content="予約,メール,本予約,仮予約,予約変更,キャンセル,空き状況,テンプレート">
+    <meta name="author" content="予約システム">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4a90e2">
 
-      h1 {
-        margin-bottom: 0.8em;
-      }
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="メールでの予約">
+    <meta property="og:description" content="メールでのご予約が簡単にできます。本予約、仮予約、予約変更、キャンセル、空き状況確認のメールテンプレートをご利用ください。">
+    <meta property="og:locale" content="ja_JP">
 
-      .button {
-        padding: 10px 16px;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        color: white;
-        text-align: center;
-        white-space: nowrap;
-      }
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="メールでの予約">
+    <meta name="twitter:description" content="メールでのご予約が簡単にできます。本予約、仮予約、予約変更、キャンセル、空き状況確認のメールテンプレートをご利用ください。">
 
-      .blue {
-        background-color: #4a90e2;
-      }
-      .yellow {
-        background-color: #f5c542;
-        color: black;
-      }
-      .red {
-        background-color: #d9534f;
-      }
-      .green {
-        background-color: #5cb85c;
-      }
+    <!-- Mobile optimizations -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="メール予約">
 
-      .button-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8em;
-        margin-bottom: 1.2em;
-      }
-
-      .notice {
-        color: #666;
-        background: #f3f3f3;
-        padding: 1em;
-        border-left: 5px solid #aaa;
-        margin-bottom: 1.5em;
-        line-height: 1.3;
-      }
-
-      .template-box {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 1em;
-        margin-bottom: 1em;
-        background: #fafafa;
-      }
-
-      .template-box h2 {
-        margin: 0 0 0.6em;
-        font-size: 1.1em;
-        color: #444;
-      }
-
-      pre {
-        background: #f9f9f9;
-        padding: 0.6em 1em;
-        border-radius: 4px;
-        border-left: 4px solid #ccc;
-        white-space: pre-wrap;
-        margin: 0.3em 0;
-        line-height: 1.4;
-      }
-
-      .copy-btn {
-        font-size: 0.75em;
-        color: #666;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        margin-left: 0.8em;
-      }
-
-      .copy-btn:focus {
-        outline: none;
-      }
-
-      .heading-line {
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
-      }
-
-      .heading-line h4 {
-        margin: 0;
-      }
-
-      .email-line {
-        display: flex;
-        align-items: center;
-        gap: 0.5em;
-        margin: 0.8em 0 1.5em;
-        font-family: monospace;
-        font-size: 1.2em;
-      }
-
-      .email-label {
-        font-weight: bold;
-        font-size: 1.2em;
-      }
-    </style>
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <title>メールでの予約 - 簡単予約システム</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>📩 メールでのご予約について</h1>
-    <p>フォームがご利用いただけない方は、以下のメールでご予約ください。</p>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    <main id="main-content">
+      <header>
+        <h1>📩 メールでのご予約について</h1>
+        <p>フォームがご利用いただけない方は、以下のボタンからメールでご予約ください。</p>
+      </header>
 
-    <div class="button-container">
-      <a
-        href="mailto:kyouwakoku258@gmail.com?subject=【本予約の申し込み】&body=%E4%BB%A5%E4%B8%8B%E3%81%AE%E5%86%85%E5%AE%B9%E3%81%A7%E6%9C%AC%E4%BA%88%E7%B4%84%E3%82%92%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E4%BD%8F%E6%89%80%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%EF%BC%9A%0A%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E5%BD%93%E6%97%A5%E8%B2%AC%E4%BB%BB%E8%80%85%20%E6%90%BA%E5%B8%AF%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E5%9B%A3%E4%BD%93%E5%90%8D%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0A%E5%9B%A3%E4%BD%93%E5%90%8D%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E6%97%A5%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E7%B5%82%E4%BA%86%E6%99%82%E9%96%93%EF%BC%9A%0A%E4%BA%BA%E6%95%B0%EF%BC%9A%0AT%2FC%EF%BC%9A%0AD%2FG%EF%BC%9A%0A%E6%94%AF%E6%89%95%E3%81%84%E6%9D%A1%E4%BB%B6%EF%BC%9A%0A%E6%96%99%E7%90%86%E5%90%8D%EF%BC%9A%0A%E5%82%99%E8%80%83%EF%BC%9A%0A%0A%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AB%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%EF%BC%9A%0A%E3%83%BB%E6%9C%AC%E4%BA%88%E7%B4%84%E5%AE%8C%E4%BA%86%E5%BE%8C%E3%81%AE%E5%8F%96%E3%82%8A%E6%B6%88%E3%81%97%E3%81%AF%E3%80%81%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AB%E6%96%99100%25%E9%A0%82%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%0A%E3%83%BB%E6%9C%AC%E4%BA%88%E7%B4%84%E5%AE%8C%E4%BA%86%E5%BE%8C%E3%81%8B%E3%82%8950%EF%BC%85%E4%BB%A5%E4%B8%8A%E3%81%AE%E6%B8%9B%E5%93%A1%E3%81%AF%E3%80%81%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AB%E6%96%99100%EF%BC%85%E3%82%92%E9%A0%82%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E2%80%BB%E6%9C%AC%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E3%81%94%E9%80%81%E4%BB%98%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%80%81%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AB%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC%E3%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E3%81%AB%E3%81%94%E5%90%8C%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE%E3%81%A8%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82"
-        class="button blue"
-        >本予約の申し込み</a
-      >
-      <a
-        href="mailto:kyouwakoku258@gmail.com?subject=【仮予約の申し込み】&body=%E4%BB%A5%E4%B8%8B%E3%81%AE%E5%86%85%E5%AE%B9%E3%81%A7%E4%BB%AE%E4%BA%88%E7%B4%84%E3%82%92%E7%94%B3%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E4%BD%8F%E6%89%80%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%EF%BC%9A%0A%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E5%BD%93%E6%97%A5%E8%B2%AC%E4%BB%BB%E8%80%85%20%E6%90%BA%E5%B8%AF%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E5%9B%A3%E4%BD%93%E5%90%8D%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0A%E5%9B%A3%E4%BD%93%E5%90%8D%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E6%97%A5%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E7%B5%82%E4%BA%86%E6%99%82%E9%96%93%EF%BC%9A%0A%E4%BA%BA%E6%95%B0%EF%BC%9A%0AT%2FC%EF%BC%9A%0AD%2FG%EF%BC%9A%0A%E6%94%AF%E6%89%95%E3%81%84%E6%9D%A1%E4%BB%B6%EF%BC%9A%0A%E6%96%99%E7%90%86%E5%90%8D%EF%BC%9A%0A%E5%82%99%E8%80%83%EF%BC%9A"
-        class="button blue"
-        >仮予約の申し込み</a
-      >
-      <a
-        href="mailto:kyouwakoku258@gmail.com?subject=【本予約へ変更の申し込み】&body=%E4%BB%A5%E4%B8%8B%E3%81%AE%E4%BB%AE%E4%BA%88%E7%B4%84%E3%82%92%E6%9C%AC%E4%BA%88%E7%B4%84%E3%81%B8%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%0A%E4%BB%AE%E4%BA%88%E7%B4%84%E3%81%AE%E5%8F%97%E4%BB%98No%EF%BC%9A%0A%E3%81%BE%E3%81%9F%E3%81%AF%0A%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E9%A3%9F%E4%BA%8B%E6%97%A5%EF%BC%9A%0A%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E9%A3%9F%E4%BA%8B%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%EF%BC%9A"
-        class="button yellow"
-        >仮予約から本予約への変更</a
-      >
-      <a
-        href="mailto:kyouwakoku258@gmail.com?subject=【予約変更の申し込み】&body=%E4%BB%A5%E4%B8%8B%E3%81%AE%E4%BA%88%E7%B4%84%E5%86%85%E5%AE%B9%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%0A%E4%BB%AE%E4%BA%88%E7%B4%84%E3%81%AE%E5%8F%97%E4%BB%98No%EF%BC%9A%0A%E3%81%BE%E3%81%9F%E3%81%AF%0A%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E9%A3%9F%E4%BA%8B%E6%97%A5%EF%BC%9A%0A%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E9%A3%9F%E4%BA%8B%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%EF%BC%9A%0A%0A%E5%B8%8C%E6%9C%9B%E3%81%99%E3%82%8B%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9%EF%BC%9A%0A%E2%80%BB%E9%A3%9F%E4%BA%8B%E6%97%A5%E3%80%81%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%E3%80%81%E4%BA%BA%E6%95%B0%E3%80%81%E6%96%99%E7%90%86%E5%90%8D%E3%81%AA%E3%81%A9%E3%82%92%E3%81%94%E8%A8%98%E5%85%A5%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82"
-        class="button red"
-        >予約の変更</a
-      >
-      <a
-        href="mailto:kyouwakoku258@gmail.com?subject=【予約キャンセルの申し込み】&body=%E4%BB%A5%E4%B8%8B%E3%81%AE%E4%BA%88%E7%B4%84%E3%82%92%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AB%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%0A%E4%BB%AE%E4%BA%88%E7%B4%84%E3%81%AE%E5%8F%97%E4%BB%98No%EF%BC%9A%0A%E3%81%BE%E3%81%9F%E3%81%AF%0A%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E9%A3%9F%E4%BA%8B%E6%97%A5%EF%BC%9A%0A%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E9%A3%9F%E4%BA%8B%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%EF%BC%9A"
-        class="button red"
-        >予約のキャンセル</a
-      >
-      <a
-        href="mailto:kyouwakoku258@gmail.com?subject=【空き状況の問い合わせ】&body=%E4%BB%A5%E4%B8%8B%E3%81%AE%E6%97%A5%E6%99%82%E3%81%A7%E7%A9%BA%E3%81%8D%E7%8A%B6%E6%B3%81%E3%82%92%E6%95%99%E3%81%88%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0A%0A%E6%97%85%E8%A1%8C%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E6%8B%85%E5%BD%93%E8%80%85%E5%90%8D%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E6%97%A5%EF%BC%9A%0A%E9%A3%9F%E4%BA%8B%E9%96%8B%E5%A7%8B%E6%99%82%E9%96%93%EF%BC%9A%0A%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E3%81%9D%E3%81%AE%E4%BB%96%E3%81%AE%E3%81%94%E8%B3%AA%E5%95%8F%EF%BC%9A"
-        class="button green"
-        >空き状況を問い合わせる</a
-      >
-    </div>
-    <p class="notice">
-      <strong>ボタンを押してもメーラーが開かない場合</strong
-      >は、ご自身のメールソフトやWebメールから直接お送りください。
-    </p>
+      <section aria-labelledby="actions-heading">
+        <h2 id="actions-heading" class="visually-hidden">予約アクション</h2>
+        <div class="button-container">
+          <a
+            href=""
+            class="button blue"
+            aria-label="本予約の申し込み - メールソフトを開きます"
+          >📧 本予約の申し込み</a>
+          <a
+            href=""
+            class="button blue"
+            aria-label="仮予約の申し込み - メールソフトを開きます"
+          >📧 仮予約の申し込み</a>
+          <a
+            href=""
+            class="button yellow"
+            aria-label="仮予約から本予約への変更 - メールソフトを開きます"
+          >🔄 仮予約から本予約への変更</a>
+          <a
+            href=""
+            class="button red"
+            aria-label="予約の変更 - メールソフトを開きます"
+          >✏️ 予約の変更</a>
+          <a
+            href=""
+            class="button red"
+            aria-label="予約のキャンセル - メールソフトを開きます"
+          >❌ 予約のキャンセル</a>
+          <a
+            href=""
+            class="button green"
+            aria-label="空き状況を問い合わせる - メールソフトを開きます"
+          >❓ 空き状況を問い合わせる</a>
+        </div>
+        <div class="notice" role="note" aria-label="重要な情報">
+          <details class="help-details">
+            <summary><strong>キャンセルポリシー</strong></summary>
+            <div class="help-content">
+              <p>以下のキャンセルポリシーにご同意いただいた上で、お進みください。</p>
+              <ul>
+                <li>本予約完了後の取り消しは、キャンセル料100%頂きます。</li>
+                <li>本予約完了後から50％以上の減員は、キャンセル料100％を頂きます。</li>
+              </ul>
+            </div>
+          </details>
+          
+          <details class="help-details">
+            <summary><strong>注意事項</strong></summary>
+            <div class="help-content">
+              <p>以下の注意事項をご理解いただいた上で、お進みください。</p>
+              <ul>
+                <li>予約確定の返信メールが届いた時点で予約完了となります。<br>
+                （ご希望された日時に予約をお受けできないこともございます。）</li>
+                <li>クラス・班ごとの席割りは受け付けておりません。流し込みでお願いします。<br>
+                （イメージ図はホームページに掲載しております。）</li>
+                <li>到着時間が遅れる場合は1時間前に必ずご連絡ください。<br>
+                (前後の予約有無により、ご希望の時間変更に対応できない場合がございます。)</li>
+                <li>アレルギー情報　（<a href="https://www.xn--t8jg3mz29n7vdbuczw6c.com/reservation/" target="_blank" rel="noopener">https://www.xn--t8jg3mz29n7vdbuczw6c.com/reservation/</a>）<br>
+                （一枚の鉄板で調理しますので100％除去はできかねます。一部除去はできます。）<br>
+                （最終的にはお客様ご自身が専門医に相談するなどご判断下さいますようお願い致します。）</li>
+              </ul>
+            </div>
+          </details>
+          
+          <details class="help-details">
+            <summary><strong>仮予約の注意事項</strong></summary>
+            <div class="help-content">
+              <p>以下をご理解いただいた上で、お進みください。</p>
+              <ul>
+                <li>仮予約期間は、食事日の1ヶ月前までとなります。</li>
+                <li>同じ日時に他のお客様の本予約が入った場合、本予約を優先し、仮予約を取り消しさせていただきます。<br>
+                ※日程が確定しましたら、お早めに本予約をお願いします。</li>
+                <li>キャンセル料は発生しません。</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+        <div class="notice" role="note" aria-label="重要な注意事項">
+          <strong>ボタンを押してもメーラーが開かない場合</strong>は、下記のテンプレート文を利用して、ご自身のメールソフトやWebメールから直接お送りください。
+        </div>
+      </section>
 
-    <div class="email-line">
-      <span class="email-label">宛先：</span>
-      <code id="emailAddress">kyouwakoku258@gmail.com</code>
-      <button class="copy-btn" onclick="copyText('emailAddress')">
-        📋 コピーする
-      </button>
-    </div>
+      <section aria-labelledby="email-heading">
+        <h2 id="email-heading" class="visually-hidden">メールアドレス情報</h2>
+        <div class="email-line">
+          <span class="email-label">宛先：</span>
+          <code id="emailAddress" aria-label="メールアドレス"></code>
+          <button type="button" class="copy-btn" onclick="copyText('emailAddress')" aria-label="メールアドレスをクリップボードにコピー">
+            📋 コピーする
+          </button>
+        </div>
+      </section>
 
-    <div class="template-box">
-      <h2>🟦 [本予約の申し込み]のメールテンプレート</h2>
-      <div class="heading-line">
-        <h4>件名</h4>
-        <button class="copy-btn" onclick="copyText('subject1')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="subject1">本予約の申し込み</pre>
-      <div class="heading-line">
-        <h4>本文</h4>
-        <button class="copy-btn" onclick="copyText('template1')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="template1">
-以下の内容で本予約を申し込みます。
+      <section aria-labelledby="templates-heading">
+        <h2 id="templates-heading" class="visually-hidden">メールテンプレート</h2>
+        <ul id="templates-container"></ul>
+      </section>
+    </main>
+
+    <script>
+      const EMAIL_ADDRESS = 'kyouwakoku258@gmail.com';
+      
+      const templates = [
+        {
+          title: '🟦 [本予約の申し込み]のメールテンプレート',
+          subject: '本予約の申し込み',
+          body: `以下の内容で本予約を申し込みます。
 
 旅行会社名：
 住所：
@@ -194,7 +159,7 @@
 団体名：
 食事日：
 食事開始時間：
-食事終了時間：
+※食事時間は45分でお願いします。宴会などの場合は備考にてご希望をお知らせください。
 人数：
 T/C：
 D/G：
@@ -202,31 +167,12 @@ D/G：
 料理名：
 備考：
 
-キャンセルポリシー：
-・本予約完了後の取り消しは、キャンセル料100%頂きます。
-・本予約完了後から50％以上の減員は、キャンセル料100％を頂きます。
-
-※本メールをご送付することで、キャンセルポリシー、注意事項にご同意するものといたします。</pre
-      >
-    </div>
-
-    <div class="template-box">
-      <h2>🟦 [仮予約の申し込み]のメールテンプレート</h2>
-      <div class="heading-line">
-        <h4>件名</h4>
-        <button class="copy-btn" onclick="copyText('subject1')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="subject1">仮予約の申し込み</pre>
-      <div class="heading-line">
-        <h4>本文</h4>
-        <button class="copy-btn" onclick="copyText('template1')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="template1">
-以下の内容で仮予約を申し込みます。
+●本メールをご送付することで、キャンセルポリシー、注意事項にご同意いただくものといたします。`
+        },
+        {
+          title: '🟦 [仮予約の申し込み]のメールテンプレート',
+          subject: '仮予約の申し込み',
+          body: `以下の内容で仮予約を申し込みます。
 
 旅行会社名：
 住所：
@@ -237,93 +183,53 @@ D/G：
 団体名：
 食事日：
 食事開始時間：
-食事終了時間：
+※食事時間は45分でお願いします。宴会などの場合は備考にてご希望の時間をお知らせください。
 人数：
 T/C：
 D/G：
 支払い条件：
 料理名：
-備考：</pre
-      >
-    </div>
-
-    <div class="template-box">
-      <h2>🟨 [本予約へ変更]のメールテンプレート</h2>
-      <div class="heading-line">
-        <h4>件名</h4>
-        <button class="copy-btn" onclick="copyText('subject2')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="subject2">本予約へ変更希望</pre>
-      <div class="heading-line">
-        <h4>本文</h4>
-        <button class="copy-btn" onclick="copyText('template2')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="template2">
-以下の仮予約を本予約へ変更します。
+備考：`
+        },
+        {
+          title: '🟨 [本予約へ変更]のメールテンプレート',
+          subject: '本予約へ変更希望',
+          body: `以下の仮予約を本予約へ変更を申し込みます。
 
 旅行会社名：
 担当者名：
-
 仮予約の受付No：
-または
-予約した食事日：
-予約した食事開始時間：</pre
-      >
-    </div>
-
-    <div class="template-box">
-      <h2>🟥 [予約の変更]のメールテンプレート</h2>
-      <div class="heading-line">
-        <h4>件名</h4>
-        <button class="copy-btn" onclick="copyText('subject3')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="subject3">予約変更の申し込み</pre>
-      <div class="heading-line">
-        <h4>本文</h4>
-        <button class="copy-btn" onclick="copyText('template3')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="template3">
-以下の予約内容を変更します。
-
-旅行会社名：
-担当者名：
-
-仮予約の受付No：
-または
+※受付Noが不明な場合は以下をご記入ください。
 予約した食事日：
 予約した食事開始時間：
 
-希望する変更内容：
-※食事日、開始時間、人数、料理名などをご記入ください。
-</pre
-      >
-    </div>
+●本メールをご送付することで、キャンセルポリシー、注意事項にご同意いただくものといたします。`
+        },
+        {
+          title: '🟥 [予約の変更]のメールテンプレート',
+          subject: '予約変更の申し込み',
+          body: `以下の予約内容の変更を申し込みます。
 
-    <div class="template-box">
-      <h2>🟥 [予約のキャンセル]のメールテンプレート</h2>
-      <div class="heading-line">
-        <h4>件名</h4>
-        <button class="copy-btn" onclick="copyText('subject3')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="subject3">予約キャンセルの申し込み</pre>
-      <div class="heading-line">
-        <h4>本文</h4>
-        <button class="copy-btn" onclick="copyText('template3')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="template3">
-以下の予約をキャンセルします。
+旅行会社名：
+担当者名：
+仮予約の受付No：
+※受付Noが不明な場合は以下をご記入ください。
+予約した食事日：
+予約した食事開始時間：
+
+＜希望する変更内容＞
+食事日：
+食事開始時間：
+人数：
+T/C：
+D/G：
+料理名：
+その他：`
+        },
+        {
+          title: '🟥 [予約のキャンセル]のメールテンプレート',
+          subject: '予約キャンセルの申し込み',
+          body: `以下の予約をキャンセルします。
 
 旅行会社名：
 担当者名：
@@ -331,54 +237,236 @@ D/G：
 仮予約の受付No：
 または
 予約した食事日：
-予約した食事開始時間：</pre
-      >
-    </div>
-
-    <div class="template-box">
-      <h2>🟩 [空き状況の問い合わせ]のメールテンプレート</h2>
-      <div class="heading-line">
-        <h4>件名</h4>
-        <button class="copy-btn" onclick="copyText('subject4')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="subject4">空き状況の問い合わせ</pre>
-      <div class="heading-line">
-        <h4>本文</h4>
-        <button class="copy-btn" onclick="copyText('template4')">
-          📋 コピーする
-        </button>
-      </div>
-      <pre id="template4">
-以下の日時で空き状況を教えてください。
+予約した食事開始時間：`
+        },
+        {
+          title: '🟩 [空き状況の問い合わせ]のメールテンプレート',
+          subject: '空き状況の問い合わせ',
+          body: `以下の日時で空き状況を教えてください。
 
 旅行会社名：
 担当者名：
 食事日：
 食事開始時間：
 人数：
-その他のご質問：</pre
-      >
-    </div>
+その他のご質問：`
+        }
+      ];
 
-    <script>
+      function createTemplateBox(template, index) {
+        // Escape HTML to prevent XSS
+        const escapeHtml = (str) => {
+          const div = document.createElement('div');
+          div.textContent = str;
+          return div.innerHTML;
+        };
+        
+        const safeTitle = escapeHtml(template.title);
+        const safeSubject = escapeHtml(template.subject);
+        const safeBody = escapeHtml(template.body);
+        const safeAriaLabel = escapeHtml(template.subject);
+        
+        return `
+          <li class="template-box">
+            <h3>${safeTitle}</h3>
+            <div class="heading-line">
+              <h4>件名</h4>
+              <button type="button" class="copy-btn" onclick="copyText('subject${index}')" aria-label="件名をクリップボードにコピー: ${safeAriaLabel}">
+                📋 コピーする
+              </button>
+            </div>
+            <pre id="subject${index}" aria-label="メール件名">${safeSubject}</pre>
+            <div class="heading-line">
+              <h4>本文</h4>
+              <button type="button" class="copy-btn" onclick="copyText('template${index}')" aria-label="本文をクリップボードにコピー">
+                📋 コピーする
+              </button>
+            </div>
+            <pre id="template${index}" aria-label="メール本文テンプレート">${safeBody}</pre>
+          </li>
+        `;
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('emailAddress').textContent = EMAIL_ADDRESS;
+        
+        const templatesContainer = document.getElementById('templates-container');
+        templates.forEach((template, index) => {
+          templatesContainer.innerHTML += createTemplateBox(template, index + 1);
+        });
+        
+        const buttons = document.querySelectorAll('.button-container .button');
+        buttons.forEach((button, index) => {
+          const template = templates[index];
+          if (template) {
+            const subject = encodeURIComponent('【' + template.subject + '】');
+            const body = encodeURIComponent(template.body);
+            
+            // 本予約の申し込みボタンまたは仮予約から本予約への変更ボタンの場合は確認ダイアログを表示
+            if (index === 0 || index === 2) {
+              button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const confirmed = confirm(
+                  '【キャンセルポリシーの確認】\n\n' +
+                  '以下のキャンセルポリシーにご同意いただけますか？\n\n' +
+                  '・本予約完了後の取り消しは、キャンセル料100%頂きます。\n' +
+                  '・本予約完了後から50％以上の減員は、キャンセル料100％を頂きます。\n\n' +
+                  '同意される場合は「OK」を押してください。'
+                );
+                
+                if (confirmed) {
+                  window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
+                }
+              });
+            } else if (index === 1) {
+              // 仮予約の申し込みボタンの場合は仮予約の注意事項を表示
+              button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const confirmed = confirm(
+                  '【仮予約の注意事項の確認】\n\n' +
+                  '以下の注意事項をご理解いただけますか？\n' +
+                  '・仮予約期間は、食事日の1ヶ月前までとなります。\n' +
+                  '・同じ日時に他のお客様の本予約が入った場合、本予約を優先し、仮予約を取り消しさせていただきます。\n' +
+                  '・キャンセル料は発生しません。\n\n' +
+                  '同意される場合は「OK」を押してください。'
+                );
+                
+                if (confirmed) {
+                  window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
+                }
+              });
+            } else {
+              button.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
+            }
+          }
+        });
+      });
+
+      function showMessage(message, type = 'success') {
+        // Remove existing messages
+        const existingMessage = document.querySelector('.copy-message');
+        if (existingMessage) {
+          existingMessage.remove();
+        }
+        
+        // Create message element
+        const messageEl = document.createElement('div');
+        messageEl.className = `copy-message copy-message-${type}`;
+        messageEl.textContent = message;
+        messageEl.setAttribute('role', 'status');
+        messageEl.setAttribute('aria-live', 'polite');
+        
+        // Add to body
+        document.body.appendChild(messageEl);
+        
+        // Auto remove after 3 seconds
+        setTimeout(() => {
+          if (messageEl.parentNode) {
+            messageEl.remove();
+          }
+        }, 3000);
+      }
+      
       function copyText(id) {
         const el = document.getElementById(id);
+        if (!el) {
+          showMessage('コピー対象が見つかりませんでした', 'error');
+          return;
+        }
+        
         const text = el.textContent || el.innerText;
-        navigator.clipboard
-          .writeText(text)
+        if (!text.trim()) {
+          showMessage('コピーする内容がありません', 'error');
+          return;
+        }
+        
+        // Show loading state
+        showLoadingState(id, true);
+        
+        // Check if clipboard API is available
+        if (!navigator.clipboard) {
+          // Fallback for older browsers
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.style.position = 'fixed';
+          textArea.style.left = '-999999px';
+          textArea.style.top = '-999999px';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          
+          try {
+            const result = document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            if (result) {
+              showMessage('✅ コピーしました', 'success');
+              updateButtonState(id, true);
+            } else {
+              showMessage('コピーに失敗しました。手動でコピーしてください', 'error');
+            }
+          } catch (err) {
+            document.body.removeChild(textArea);
+            showMessage('コピー機能がご利用いただけません。手動でコピーしてください', 'error');
+          }
+          showLoadingState(id, false);
+          return;
+        }
+        
+        // Modern clipboard API
+        navigator.clipboard.writeText(text)
           .then(() => {
-            const btns = document.querySelectorAll(
-              `[onclick="copyText('${id}')"]`
-            );
-            btns.forEach((btn) => {
-              const original = btn.textContent;
-              btn.textContent = "✅ コピーしました";
-              setTimeout(() => (btn.textContent = original), 1500);
-            });
+            showMessage('✅ コピーしました', 'success');
+            updateButtonState(id, true);
+            showLoadingState(id, false);
           })
-          .catch((err) => alert("コピーに失敗しました: " + err));
+          .catch((err) => {
+            console.error('Clipboard error:', err);
+            showLoadingState(id, false);
+            
+            // Provide specific error messages
+            if (err.name === 'NotAllowedError') {
+              showMessage('クリップボードへのアクセスが許可されていません。ブラウザの設定を確認してください', 'error');
+            } else if (err.name === 'SecurityError') {
+              showMessage('セキュリティ上の理由でコピーできません。HTTPSでアクセスしてください', 'error');
+            } else {
+              showMessage('コピーに失敗しました。手動でテキストを選択してコピーしてください', 'error');
+            }
+          });
+      }
+      
+      function showLoadingState(id, isLoading) {
+        const btns = document.querySelectorAll(`[onclick="copyText('${id}')"]`);
+        btns.forEach((btn) => {
+          if (isLoading) {
+            btn.dataset.originalText = btn.textContent;
+            btn.textContent = "⏳ コピー中...";
+            btn.disabled = true;
+            btn.style.opacity = '0.6';
+          } else {
+            if (btn.dataset.originalText) {
+              btn.textContent = btn.dataset.originalText;
+              delete btn.dataset.originalText;
+            }
+            btn.disabled = false;
+            btn.style.opacity = '1';
+          }
+        });
+      }
+      
+      function updateButtonState(id, success) {
+        const btns = document.querySelectorAll(`[onclick="copyText('${id}')"]`);
+        btns.forEach((btn) => {
+          if (success) {
+            const original = btn.dataset.originalText || btn.textContent;
+            btn.textContent = "✅ コピー済み";
+            btn.style.opacity = '0.7';
+            setTimeout(() => {
+              btn.textContent = original;
+              btn.style.opacity = '1';
+            }, 2000);
+          }
+        });
       }
     </script>
   </body>

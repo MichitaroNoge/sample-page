@@ -1,0 +1,676 @@
+:root {
+  /* Color palette */
+  --color-primary: #4a90e2;
+  --color-primary-dark: #2a5aa0;
+  --color-secondary: #f5c542;
+  --color-secondary-dark: #d4a017;
+  --color-success: #4caf50;
+  --color-success-dark: #45a049;
+  --color-error: #f44336;
+  --color-error-dark: #da190b;
+  --color-warning: #ff9800;
+  --color-warning-dark: #f57c00;
+  
+  /* Text colors */
+  --color-text-primary: #333;
+  --color-text-secondary: #444;
+  --color-text-muted: #666;
+  --color-text-light: #999;
+  --color-text-white: #fff;
+  
+  /* Background colors */
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #fafafa;
+  --color-bg-tertiary: #f3f3f3;
+  --color-bg-hover: #f0f0f0;
+  
+  /* Border colors */
+  --color-border-light: #ddd;
+  --color-border-medium: #ccc;
+  --color-border-dark: #aaa;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.8rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.2rem;
+  --spacing-2xl: 1.5rem;
+  --spacing-3xl: 2rem;
+  
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.2rem;
+  --font-size-2xl: 1.3rem;
+  --font-size-3xl: 1.5rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Border radius */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-display: swap;
+  padding: var(--spacing-3xl);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.button {
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  font-weight: bold;
+  color: var(--color-text-white);
+  text-align: center;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.button:focus,
+.button:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: 2px;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.blue {
+  background-color: var(--color-primary);
+}
+.yellow {
+  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+}
+.red {
+  background-color: var(--color-error);
+}
+.green {
+  background-color: var(--color-success);
+}
+
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: var(--spacing-md)) {
+  .button-container {
+    margin: calc(-1 * var(--spacing-md) / 2);
+  }
+  
+  .button-container .button {
+    margin: calc(var(--spacing-md) / 2);
+  }
+}
+
+.notice {
+  color: var(--color-text-secondary);
+  background: var(--color-bg-tertiary);
+  padding: var(--spacing-lg);
+  border-left: 5px solid var(--color-border-dark);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.3;
+}
+
+#templates-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.template-box {
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  background: var(--color-bg-secondary);
+}
+
+.template-box h3 {
+  margin: 0 0 var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+pre {
+  background: #f9f9f9;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-border-medium);
+  white-space: pre-wrap;
+  margin: var(--spacing-xs) 0;
+  line-height: 1.4;
+}
+
+.copy-btn {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: var(--spacing-md);
+}
+
+.copy-btn:focus,
+.copy-btn:focus-visible {
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  background-color: var(--color-bg-hover);
+  border-radius: var(--radius-sm);
+  padding: 2px 4px;
+}
+
+.copy-btn:hover {
+  background-color: var(--color-bg-hover);
+  border-radius: var(--radius-sm);
+  padding: 2px 4px;
+}
+
+.heading-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: var(--spacing-sm)) {
+  .heading-line > * + * {
+    margin-left: var(--spacing-sm);
+  }
+}
+
+.heading-line h4 {
+  margin: 0;
+}
+
+.email-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0 var(--spacing-2xl);
+  font-family: 'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: var(--font-size-xl);
+}
+
+/* Fallback for browsers that don't support gap */
+@supports not (gap: var(--spacing-sm)) {
+  .email-line > * + * {
+    margin-left: var(--spacing-sm);
+  }
+}
+
+.email-label {
+  font-weight: bold;
+  font-size: var(--font-size-xl);
+}
+
+/* Loading and disabled states */
+.copy-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Better text overflow handling */
+#emailAddress {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Ensure proper text selection */
+pre, code {
+  user-select: all;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+.button-container {
+  contain: layout;
+}
+
+.template-box {
+  contain: layout style;
+}
+
+pre {
+  contain: layout;
+  will-change: auto;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Focus management */
+*:focus {
+  scroll-margin-top: 2rem;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .button:hover {
+    transform: none;
+  }
+}
+
+/* Visually hidden utility class for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Color differentiation beyond color alone */
+.button.yellow {
+  border: 2px solid #d4a017;
+}
+
+.button.red {
+  border: 2px solid #a02010;
+}
+
+.button.green {
+  border: 2px solid #2d5a2d;
+}
+
+.button.blue {
+  border: 2px solid #2a5aa0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button:focus,
+  .button:focus-visible {
+    outline: 4px solid;
+  }
+  
+  .copy-btn:focus,
+  .copy-btn:focus-visible {
+    outline: 3px solid;
+  }
+  
+  .button {
+    border-width: 3px;
+  }
+}
+
+/* Mobile-first responsive design */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1em;
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 0.6em;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .email-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8em;
+    font-size: 1em;
+  }
+  
+  .email-label {
+    font-size: 1em;
+  }
+  
+  #emailAddress {
+    word-break: break-all;
+    font-size: 0.9em;
+  }
+  
+  .copy-btn {
+    margin-left: 0;
+    padding: 4px 8px;
+    font-size: 0.8em;
+  }
+  
+  .template-box {
+    padding: 0.8em;
+    margin-bottom: 0.8em;
+  }
+  
+  .template-box h3 {
+    font-size: 1em;
+    margin-bottom: 0.8em;
+  }
+  
+  .heading-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4em;
+  }
+  
+  .heading-line .copy-btn {
+    align-self: flex-end;
+  }
+  
+  pre {
+    font-size: 0.85em;
+    padding: 0.5em 0.8em;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  .notice {
+    padding: 0.8em;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0.5em;
+    font-size: 13px;
+  }
+  
+  h1 {
+    font-size: 1.3em;
+    margin-bottom: 0.6em;
+  }
+  
+  .button {
+    padding: 14px 12px;
+    font-size: 15px;
+  }
+  
+  .template-box {
+    padding: 0.6em;
+  }
+  
+  .template-box h3 {
+    font-size: 0.9em;
+  }
+  
+  pre {
+    font-size: 0.8em;
+    padding: 0.4em 0.6em;
+  }
+  
+  .notice {
+    padding: 0.6em;
+    font-size: 0.85em;
+  }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 1.5em;
+  }
+  
+  .button-container {
+    justify-content: center;
+  }
+  
+  .button {
+    min-width: 200px;
+  }
+}
+
+/* Large screen optimizations */
+@media screen and (min-width: 1200px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3em;
+  }
+  
+  .button-container {
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto 1.2em;
+  }
+  
+  .template-box {
+    max-width: 900px;
+    margin: 0 auto 1em;
+  }
+}
+
+/* Copy message styles */
+.copy-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 1000;
+  max-width: 300px;
+  word-wrap: break-word;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease-out;
+}
+
+.copy-message-success {
+  background-color: #4caf50;
+  color: white;
+  border: 2px solid #45a049;
+}
+
+.copy-message-error {
+  background-color: #f44336;
+  color: white;
+  border: 2px solid #da190b;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile adjustments for copy messages */
+@media screen and (max-width: 768px) {
+  .copy-message {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .copy-message {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* Enhanced notice styles */
+.notice-steps {
+  margin: 1em 0;
+  padding-left: 1.5em;
+  line-height: 1.6;
+}
+
+.notice-steps li {
+  margin-bottom: 0.8em;
+}
+
+.notice-steps strong {
+  color: #2a5aa0;
+}
+
+.help-details {
+  margin: 1em 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.help-details summary {
+  background-color: #f8f9fa;
+  padding: 0.8em 1em;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+.help-details summary:hover {
+  background-color: #e9ecef;
+}
+
+.help-details summary:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: -2px;
+}
+
+.help-details[open] summary {
+  border-bottom: 1px solid #ddd;
+}
+
+.help-content {
+  padding: 1em;
+  background-color: #ffffff;
+}
+
+.help-content p {
+  margin: 0.5em 0;
+}
+
+.help-content ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.help-content li {
+  margin-bottom: 0.3em;
+}
+
+/* Mobile adjustments for help content */
+@media screen and (max-width: 768px) {
+  .notice-steps {
+    padding-left: 1.2em;
+  }
+  
+  .notice-steps li {
+    margin-bottom: 0.6em;
+    font-size: 0.9em;
+  }
+  
+  .help-details summary {
+    padding: 0.6em 0.8em;
+    font-size: 0.9em;
+  }
+  
+  .help-content {
+    padding: 0.8em;
+    font-size: 0.85em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notice-steps {
+    padding-left: 1em;
+  }
+  
+  .notice-steps li {
+    font-size: 0.85em;
+  }
+  
+  .help-details summary {
+    padding: 0.5em 0.6em;
+    font-size: 0.85em;
+  }
+  
+  .help-content {
+    padding: 0.6em;
+    font-size: 0.8em;
+  }
+}
